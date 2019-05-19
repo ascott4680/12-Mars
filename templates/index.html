@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>What's Happening on Mars?</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p>It's red, it's cold, and it's our neighbor!</p>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Refresh Mars Data</a></p>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-8">
+        <div><h2>Red Hot Martian News</h2>
+          <h4>{{ mars.news_header }}</h4>
+          <h5>{{ mars.news_body }}</h5>
+          <hr>
+          <h2>Latest Mars Image</h2>
+          <img src="{{ mars.featured_image }}" width="50%" alt="mars_img">
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="col-xs-12"><h3>Current Weather on Mars</h3>
+        {{mars.tweet}}
+        </div>
+        <div class="col-xs-12"><h3>Mars Facts</h3>
+        {{mars.table | safe}}
+        </div>
+        <!-- <div class="col-xs-12">Little Image #3</div>
+        <div class="col-xs-12">Little Image #4</div> -->
+      </div>
+    </div>
+
+  <hr/>
+<!-- add the hemispheres down here -->
+<div class="col-md-6">
+      <h2>Mars Hemispheres</h2>
+      <h5>{{ mars.hemisphere[0].title}}</h5>
+      <img src = {{ mars.hemisphere[0].img_url}} width="50%">
+  </div>
+  <div class="col-md-6">
+
+      <h5>{{ mars.hemisphere[1].title}}</h5>
+      <img src = {{ mars.hemisphere[1].img_url}} width="50%">
+  </div>
+  </div>
+  <div class="col-md-6">
+
+      <h5>{{ mars.hemisphere[2].title}}</h5>
+      <img src = {{ mars.hemisphere[2].img_url}} width="50%">
+  </div>
+  <div class="col-md-6">
+
+      <h5>{{ mars.hemisphere[3].title}}</h5>
+      <img src = {{ mars.hemisphere[3].img_url}} width="50%">
+  </div>
+  </div>
+</body>
+
+</html>
