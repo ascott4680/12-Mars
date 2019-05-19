@@ -79,6 +79,7 @@ def scrape_info():
 
     #find article title--------------------------------------------------
     mars_tweet = mars_soup.find_all('div', class_='js-tweet-text-container')[0].text
+    mars_tweet = mars_tweet.replace('\n','').split('pic.twitter')[0]
 
 
 
