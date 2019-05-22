@@ -25,7 +25,7 @@ def scrape_info():
     browser.visit(url)
 
     #let the page load fully
-    time.sleep(1)
+    #time.sleep(1)
 
 
     #assign the variables
@@ -46,12 +46,12 @@ def scrape_info():
     news_p = results2.text.lstrip()
 
     #getting connection refused errors, sleeping 
-    time.sleep(1)
+    #time.sleep(1)
 
 
     image_url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(image_url)
-    time.sleep(1)
+    #time.sleep(1)
 
     html = browser.html
     soup = BeautifulSoup(html, "html.parser")
@@ -64,7 +64,7 @@ def scrape_info():
     #browser.quit()
     
     #Sleeping again to be safe
-    time.sleep(1)
+    #time.sleep(1)
 
 
     # URL of page to be scraped
@@ -102,9 +102,8 @@ def scrape_info():
 
     hemi_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
     browser.visit(hemi_url)
-    time.sleep(2)
+    #time.sleep(2)
     base='https://astrogeology.usgs.gov'
-    linkend= '.tif/full.jpg'
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
 
@@ -120,7 +119,7 @@ def scrape_info():
         hemisphere_image_urls.append(hemi_dict)
         browser.visit(hemi_link)
         
-        time.sleep(1)
+        #time.sleep(1)
         current_html=browser.html
         current_soup = BeautifulSoup(current_html, 'lxml')
         cs_find= current_soup.find('h2', class_='title')
